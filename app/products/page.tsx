@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import apiFetch from "@/services/api"
+import ProductImage from "@/components/ProductImage"
 
 interface Product {
   productId: string
@@ -159,25 +160,13 @@ export default function ProductsPage() {
                   <Link key={product.productId} href={`/products/${product.productId}`}>
                     <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group cursor-pointer h-full border border-gray-100">
                       <div className="relative">
-                        <div className="aspect-square bg-gray-100 overflow-hidden">
-                          {product.thumbnail ? (
-                            <img
-                              src={product.thumbnail}
-                              alt={product.productName}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                              onError={(e) => {
-                                e.currentTarget.src = "/placeholder.svg"
-                              }}
-                            />
-                          ) : (
-                            <div className="w-full h-full flex items-center justify-center bg-gray-200">
-                              <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                              </svg>
-                            </div>
-                          )}
+                         <div className="aspect-square bg-gray-100 overflow-hidden">
+                          <ProductImage
+                            thumbnail={product.thumbnail}
+                            productName={product.productName}
+                            className="group-hover:scale-110 transition-transform duration-500"
+                          />
                         </div>
-                        
                         {/* Badges */}
                         <div className="absolute top-3 left-3 flex flex-col gap-2">
                           {!product.inStock && (
