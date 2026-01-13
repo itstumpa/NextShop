@@ -335,6 +335,12 @@ export default function HomePage() {
                 >
                   Dashboard
                 </Link>
+                <Link
+                  href="/login"
+                  className="text-gray-600 hover:text-gray-900 font-medium"
+                >
+                  Login
+                </Link>
               </div>
             </div>
           </div>
@@ -439,6 +445,13 @@ export default function HomePage() {
               >
                 Dashboard
               </Link>
+              <Link
+                href="/login"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                Login
+              </Link>
+              
 
               <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-200">
                 <svg
