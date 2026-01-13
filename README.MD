@@ -23,7 +23,7 @@ Modern, responsive e-commerce homepage with clean design and robust error handli
 
 ```bash
 # Clone and install
-git clone https://github.com/itstumpa/nextshop-homepage.git
+git clone https://github.com/itstumpa/NextShop.git
 cd nextshop-homepage
 npm install
 
