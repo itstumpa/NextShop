@@ -3,7 +3,7 @@
 Modern, responsive e-commerce homepage with clean design and robust error handling.
 
 ## 🚀 Live Demo
-[View Live Demo](https://nextshop-demo.vercel.app)
+[View Live Demo](https://next-shop-itstumpa.vercel.app/)
 
 ## ✨ Features
 - **Modern UI**: Clean design with smooth animations
