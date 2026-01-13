@@ -51,6 +51,49 @@ export default function HomePage() {
     seconds: 45
   })
 
+   const features = [
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+        </svg>
+      ),
+      title: "Free Shipping",
+      description: "Free delivery on orders over $50. Fast and reliable shipping worldwide.",
+      gradient: "from-blue-500 to-blue-600"
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+      title: "Secure Payment",
+      description: "Your payment information is encrypted and secure with SSL protection.",
+      gradient: "from-green-500 to-green-600"
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+      ),
+      title: "Easy Returns",
+      description: "30-day hassle-free returns. Not satisfied? Get your money back.",
+      gradient: "from-purple-500 to-purple-600"
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      ),
+      title: "24/7 Support",
+      description: "Round-the-clock customer support to help you with any questions.",
+      gradient: "from-orange-500 to-orange-600"
+    }
+  ];
+
   // Countdown timer effect
   useEffect(() => {
     const timer = setInterval(() => {
@@ -248,51 +291,126 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Discover Amazing
-                <span className="block text-yellow-300">Products</span>
-              </h1>
-              <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-2xl">
-                Shop the latest trends with unbeatable prices and premium quality guaranteed
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link
-                  href="/products"
-                  className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  Shop Now
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-                <Link
-                  href="#categories"
-                  className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-200"
-                >
-                  Browse Categories
-                </Link>
+     <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white overflow-hidden">
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/20"></div>
+      
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute w-96 h-96 bg-blue-400/20 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
+        <div className="absolute w-96 h-96 bg-indigo-400/20 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse" style={{animationDelay: '1s'}}></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+        <div className="grid lg:grid-cols-3 gap-8 items-center">
+          {/* Text Content */}
+          <div className="text-center lg:text-left col-span-2 z-10">
+            <div className="inline-block mb-4 px-4 py-2 bg-yellow-400/20 border border-yellow-300/30 rounded-full">
+              <span className="text-yellow-300 font-semibold text-sm">🎉 New Arrivals Available</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              Discover Amazing
+              <span className="block text-yellow-300">Electronics</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-2xl mx-auto lg:mx-0">
+              Shop the latest tech trends with unbeatable prices and premium quality guaranteed electronics products
+            </p>
+            
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Link
+                href="/products"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Shop Now
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              
+              <Link
+                href="#deals"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-200"
+              >
+                Explore Deals
+              </Link>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="mt-12 flex flex-wrap gap-6 justify-center lg:justify-start text-sm">
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <span className="text-blue-100">4.8/5 Rating</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-blue-100">Free Shipping</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                </svg>
+                <span className="text-blue-100">30-Day Returns</span>
               </div>
             </div>
-            <div className="hidden lg:block">
-              <div className="relative">
-                <div className="w-96 h-96 bg-white/10 rounded-full absolute -top-10 -right-10 animate-pulse"></div>
-                <div className="w-72 h-72 bg-white/20 rounded-full absolute top-10 right-10"></div>
+          </div>
+
+          {/* Product Image */}
+          <div className="relative z-10">
+            <div className="relative col-span-1 w-full max-w-md mx-auto">
+              {/* Decorative circles */}
+              <div className="absolute w-96 h-96 bg-white/10 rounded-full -top-10 -right-10 blur-2xl animate-pulse"></div>
+              <div className="absolute w-72 h-72 bg-white/20 rounded-full top-10 right-10 blur-xl"></div>
+              
+              {/* Product showcase */}
+              <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-2xl">
+                {/* Product image placeholder - Replace with actual product */}
+                <div className="relative aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden shadow-xl">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    {/* High-quality electronics product illustration */}
+                    <svg className="w-3/4 h-3/4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20 3H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h7v2H8v2h8v-2h-3v-2h7c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM4 14V5h16l.002 9H4z"/>
+                    </svg>
+                  </div>
+                  {/* Badge */}
+                  <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
+                    -25%
+                  </div>
+                </div>
+                
+                {/* Product info */}
+                <div className="mt-6 text-center">
+                  <h3 className="text-xl font-bold mb-2">Premium Wireless Headphones</h3>
+                  <div className="flex items-center justify-center gap-3">
+                    <span className="text-2xl font-bold text-yellow-300">$149.99</span>
+                    <span className="text-lg text-gray-300 line-through">$199.99</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating elements */}
+              <div className="absolute -top-6 -left-6 bg-yellow-400 text-blue-900 px-4 py-2 rounded-xl font-bold shadow-lg animate-bounce">
+                Hot Deal! 🔥
+              </div>
+              <div className="absolute -bottom-6 -right-6 bg-white text-blue-600 px-4 py-2 rounded-xl font-semibold shadow-lg">
+                ⚡ Fast Delivery
               </div>
             </div>
-                      </div>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Categories Section */}
-        <section id="categories" className="py-16">
-          <div className="text-center mb-12">
+        <section id="categories" className="py-12">
+          <div className="text-center mb-6">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Shop by Category</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               Explore our curated collection across different categories
@@ -349,7 +467,7 @@ export default function HomePage() {
         </section>
 
         {/* Featured Products Section */}
-        <section className="py-16">
+        <section className="py-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Products</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -430,12 +548,12 @@ export default function HomePage() {
                         </div>
                         
                         <Link href={`/products/${product.productId}`}>
-                          <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors cursor-pointer">
+                          <h3 className="font-semibold text-gray-900 mb-2 line-clamp-1 group-hover:text-blue-600 transition-colors cursor-pointer">
                             {product.productName}
                           </h3>
                         </Link>
                         
-                        <div className="text-sm text-gray-600 mb-4 line-clamp-2" 
+                        <div className="text-sm text-gray-600 mb-4 line-clamp-1" 
                              dangerouslySetInnerHTML={{ __html: product.shortDescription }} />
                         
                         <div className="flex items-center justify-between">
@@ -492,7 +610,7 @@ export default function HomePage() {
         </section>
 
         {/* Special Offer Banner */}
-        <section className="py-16">
+        <section className="py-10">
           <div className="bg-gradient-to-r from-red-500 to-pink-600 rounded-3xl text-white p-8 md:p-12 relative overflow-hidden">
             <div className="absolute inset-0 bg-black/10"></div>
             <div className="relative text-center max-w-4xl mx-auto">
@@ -530,7 +648,7 @@ export default function HomePage() {
         </section>
 
         {/* Best Sellers Section */}
-        <section className="py-16">
+        <section className="py-10" id="deals">
           <div className="flex justify-between items-center mb-12">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Best Sellers</h2>
@@ -588,7 +706,7 @@ export default function HomePage() {
 
                         <div className="p-4">
                           <Link href={`/products/${product.productId}`}>
-                            <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 hover:text-blue-600 transition-colors cursor-pointer">
+                            <h3 className="font-semibold text-gray-900 mb-2 line-clamp-1 hover:text-blue-600 transition-colors cursor-pointer">
                               {product.productName}
                             </h3>
                           </Link>
@@ -629,65 +747,76 @@ export default function HomePage() {
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="py-16 bg-gray-50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose NextShop?</h2>
-              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                We're committed to providing you with the best shopping experience
-              </p>
-            </div>
+  <section className="py-10 relative overflow-hidden">
+     
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  icon: (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                    </svg>
-                  ),
-                  title: "Free Shipping",
-                  description: "Free delivery on orders over $50. Fast and reliable shipping worldwide."
-                },
-                {
-                  icon: (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                  ),
-                  title: "Secure Payment",
-                  description: "Your payment information is encrypted and secure with SSL protection."
-                },
-                {
-                  icon: (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                    </svg>
-                  ),
-                  title: "Easy Returns",
-                  description: "30-day hassle-free returns. Not satisfied? Get your money back."
-                },
-                {
-                  icon: (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                  ),
-                  title: "24/7 Support",
-                  description: "Round-the-clock customer support to help you with any questions."
-                }
-              ].map((feature, index) => (
-                <div key={index} className="text-center group">
-                  <div className="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-700 transition-colors duration-200 shadow-lg">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
-              ))}
-            </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-block mb-4">
+            <span className="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold">
+              Our Advantages
+            </span>
           </div>
-        </section>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Why Choose <span className="text-blue-600">NextShop?</span>
+          </h2>
+          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
+            We're committed to providing you with the best shopping experience with premium quality and service
+          </p>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+            >
+              {/* Gradient background on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl from-blue-500 to-purple-500"></div>
+              
+              {/* Icon */}
+              <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} text-white rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                {feature.icon}
+              </div>
+              
+              {/* Content */}
+              <div className="text-center relative">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+
+              {/* Decorative corner accent */}
+              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-blue-500/10 to-transparent rounded-bl-3xl rounded-tr-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Stats */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 pt-12">
+          {[
+            { number: "10K+", label: "Happy Customers" },
+            { number: "5K+", label: "Products" },
+            { number: "98%", label: "Satisfaction Rate" },
+            { number: "24/7", label: "Support Available" }
+          ].map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
+                {stat.number}
+              </div>
+              <div className="text-gray-600 font-medium">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
         {/* Newsletter Section */}
         <section className="py-16">
